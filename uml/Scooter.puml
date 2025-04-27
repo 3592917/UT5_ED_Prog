@@ -1,0 +1,5 @@
+@startuml
+class Scooter {
+    - espacioBajoAsiento: double
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Persona {
+    - nombre: string
+    - apellidos: string
+    - dni: string
+    - fechaCaducidadCarnet: LocalDate
+    - annioNacimiento: LocalDate
+}
+@enduml

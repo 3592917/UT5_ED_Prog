@@ -1,0 +1,6 @@
+@startuml
+class Deportiva {
+    - velocidadMaxima: double
+    - tieneQuickShifter: boolean
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Moto {
+    - cilindrada: int
+    - peso: int
+    - alturaAsiento: double
+    - tipoTransmision: enum
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+abstract class Vehiculo {
+    - matricula: string
+    - marca: string
+    - modelo: string
+    - annioFabricacion: int
+    - kilometraje: int
+    - precio: double
+    - estado: enum
+    - propietario: Persona
+}
+
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Sedan {
+    - espacioInterior: double
+    - nivelConfort: enum
+}
+@enduml

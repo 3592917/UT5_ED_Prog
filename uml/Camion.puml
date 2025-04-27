@@ -1,0 +1,10 @@
+@startuml
+
+class Camion {
+    - capacidadCarga: double
+    - numEjes: int
+    - longitudRemolque: double
+    - potenciaMotor: int
+}
+
+@enduml

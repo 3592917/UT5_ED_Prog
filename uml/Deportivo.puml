@@ -1,0 +1,7 @@
+@startuml
+class Deportivo {
+    - aceleracion0a100
+    - potenciaCV: int
+    - tieneModoPista: boolean
+}
+@enduml
