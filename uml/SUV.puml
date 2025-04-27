@@ -1,6 +1,0 @@
-@startuml
-class SUV {
-    - capacidadOffroad: boolean
-    - alturaLibreSuelo: double
-}
-@enduml

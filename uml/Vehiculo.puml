@@ -1,13 +1,122 @@
 @startuml
 abstract class Vehiculo {
-    - matricula: string
-    - marca: string
-    - modelo: string
+    - matricula: String
+    - marca: String
+    - modelo: String
     - annioFabricacion: int
     - kilometraje: int
     - precio: double
-    - estado: enum
+    - estado: EstadoVehiculo
     - propietario: Persona
+    + registrarVehiculo(nuevoVehiculo: Vehiculo): void
+    + listarVehiculo(): String
+    + buscarVehiculo(matricula: String): String
+    + asignarVehiculo(matricula: String, propietario: Persona): void
+    + resumenRiesgo(matricula: String): String
+    + actualizarKilometraje(matricula: String, nuevoKm: int): void
+    + getAnios(): int
+    + mostrarPropietario(): String
+    + mostrarDescripcion(): String
+    + mostrarPrecio(): double
+    + calculoRiesgo(): double
+    + calculoDepreciacion(): double
 }
+class Coche {
+    - numPuertas: int
+    - tipoCombustible: TipoCombustible
+    - capacidadMaletero: int
+    - traccion: Traccion
+}
+class Sedan {
+    - espacioInterior: double
+    - nivelConfort: NivelConfort
+}
+class SUV {
+    - capacidadOffroad: boolean
+    - alturaLibreSuelo: double
+}
+class Deportivo {
+    - aceleracion0a100: double
+    - potenciaCV: int
+    - tieneModoPista: boolean
+}
+class Moto {
+    - cilindrada: int
+    - peso: int
+    - alturaAsiento: double
+    - tipoTransmision: TipoTransmision
+}
+class Scooter {
+    - espacioBajoAsiento: double
+}
+class Deportiva {
+    - velocidadMaxima: double
+    - tieneQuickShifter: boolean
+}
+class Camion {
+    - capacidadCarga: double
+    - numEjes: int
+    - longitudRemolque: double
+    - potenciaMotor: int
+}
+class Validar {
+    + validarDNI(dni: String): void
+}
+class InvalidDNI {
+    + InvalidDNI(mensaje: String)
+}
+class Persona {
+    - nombre: String
+    - apellidos: String
+    - dni: String
+    - fechaCaducidadCarnet: LocalDate
+    - annioNacimiento: int
+}
+interface Valorable {
+    + calculoDepreciacion(): double
+}
+
+' ENUM
+
+enum EstadoVehiculo {
+    DISPONIBLE
+    VENDIDO
+}
+
+enum TipoCombustible {
+    GASOLINA
+    DIESEL
+    HIBRIDO
+    ELECTRICO
+}
+
+enum Traccion {
+    DELANTERA
+    TRASERA
+    4X4
+}
+
+enum NivelConfort {
+    BASICO
+    MEDIO
+    PREMIUM
+}
+
+enum TipoTransmision {
+    MANUAL
+    AUTOMATICA
+}
+
+Coche --|> Vehiculo
+Moto --|> Vehiculo
+Camion --|> Vehiculo
+Sedan --|> Coche
+SUV --|> Coche
+Deportivo --|> Coche
+Scooter --|> Moto
+Deportiva --|> Moto
+Vehiculo ..|> Valorable
+Vehiculo *-- Persona
+Validar ..> InvalidDNI
 
 @enduml

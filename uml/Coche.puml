@@ -1,8 +1,0 @@
-@startuml
-class Coche {
-    - numPuertas: int
-    - tipoCombustible: enum
-    - capacidadMaletero: int
-    - traccion: enum
-}
-@enduml
